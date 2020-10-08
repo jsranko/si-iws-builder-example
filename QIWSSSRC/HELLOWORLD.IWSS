@@ -1,55 +1,43 @@
 {
 	"server": { 
-		"name": "SIIIA",
-		"port": 16787,
+		"name": "$(LIBRARY)",
+		"port": 16788,
 		"userId": "QWSERVICE",
 		"version": "*CURRENT",
-		"printErrorDetails":false
+		"printErrorDetails":false 
 	},
 	"services": [
 		{
-			"name": "SIROUTER",
-			"programObject": "/QSYS.LIB/$(LIBRARY).LIB/SIROUTER.PGM",
+			"name": "HELLOWORLDX",
+			"programObject": "/QSYS.LIB/$(LIBRARY).LIB/HELLOWORLD.SRVPGM",
 			"userId": "*SERVER",
 			"detectFieldLengths": true,
 			"serviceType": "*REST",
 			"host": "localhost",
 			"targetNamespace": null,
-			"propertiesFile": "/tmp/SIROUTER.propertiesFile",
-			"libraryList": "SIIIA:QTEMP",
+			"propertiesFile": "/tmp/HELLOWORLD.propertiesFile",
+			"libraryList": "HELLOWRLD:QTEMP",
 			"libraryListPosition": "*FIRST",
-			"transportMetadata": "REMOTE_ADDR:REMOTE_USER:REQUEST_METHOD:REQUEST_URL:REQUEST_URI:QUERY_STRING:SERVER_NAME:SERVER_PORT",
+			"transportMetadata": null,
 			"transportHeaders": null,
 			"useParamNameAsElementName": false,
 			"properties": [
 				{
-					"SIROUTER.uri.path.template": null,
-					"SIROUTER.http.request.method": "GET",
-					"SIROUTER.wrap.input.parameters": false,
-					"SIROUTER.wrap.output.parameter": false,
-					"SIROUTER.consumes": "application/json",
-					"SIROUTER.produces": "application/json",
-					"SIROUTER.response.code.parameter": "RESPONSECODE",
-					"SIROUTER.http.headers.parameter": "RESPONSEHEADERS",
-					"SIROUTER.PAYLOADIN.usage": "input",
-					"SIROUTER.PAYLOADOUT.usage": "output",
-					"SIROUTER.RESPONSECODE.usage": "output",
-					"SIROUTER.RESPONSEHEADERS.usage": "output",
+					"sayHello.uri.path.template": "/sayHallo/"	,
+					"sayHello.http.request.method": "GET",
+					"sayHello.wrap.input.parameters": false,
+					"sayHello.wrap.output.parameter": false,
+					"sayHello.consumes": "application/json",
+					"sayHello.produces": "application/json",
+					"sayHello.NAME.usage": "input",
+					"sayHello.NAME.queryparam": "name",
+					"sayHello.RESPONSE.usage": "output",
 					"responses" : {
 						"200": {
            					"description": "Successful operation XXXXXX"
-            			},
-            			"400": {
-           					"description": "yyyyyyy"
             			}
             		}
 				}
-			],
-			"script" : [
-				{
-					"description": "Description",
-					"script": "./xxxx.sh"
-				}	
 			]
 		}
 	]

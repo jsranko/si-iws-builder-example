@@ -1,0 +1,9 @@
+*.srvpgm
+*.pgm
+*.module
+*.lib
+*.srcpf
+*.jar
+*.cpysrc
+*.shell
+*.iwssconf

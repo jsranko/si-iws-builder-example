@@ -1,18 +1,21 @@
 **FREE
 
 ctl-opt nomain;
-ctl-opt pgminfo(*pcml:*module);
+ctl-opt pgminfo(*pcml:*module:*dclcase);
 
+/define HELLOWORLD
 /include qcpylesrc/helloworldp.rpgle
 
 dcl-proc sayHello export;
-dcl-pi sayHello like(tJSON) extproc(*dclcase);
-  Name like(tName);
+dcl-pi sayHello extproc(*dclcase);
+  Name like(tName) const;
+  Response like(tJSON);
 end-pi;
 
   if Name = *blanks;
-    return 'Hello there';
+    Response = 'Hello there';
   else;
-    return 'Hello ' + %trim(name);
+    Response = 'Hello ' + %trim(name);
   endif;
+  return;
 end-proc;

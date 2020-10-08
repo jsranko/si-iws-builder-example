@@ -13,10 +13,15 @@
 dcl-s tName char(50) template;
 dcl-s tJSON char(1024) template;
 
+/if defined(HELLOWORLD)
+  /eof
+/endif
+
 //==========================================================================================
 // Prototypes
 //==========================================================================================
 
-dcl-pr sayHello like(tJSON) extproc(*dclcase);
-  Name like(tName);
+dcl-pr sayHello extproc(*dclcase);
+  Name like(tName) const;
+  Response like(tJSON);
 end-pr;
