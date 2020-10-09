@@ -83,10 +83,6 @@ clean: clean-iwss \
 		clean-srvpgms \
 		clean-lib
 
-clean-lib:
-	rm -f $(LIBRARY).lib &&\
-	system -Kp 'DLTLIB $(LIBRARY)' || :	
-
 clean-srcfiles:
 	rm -f *.srcpf
 

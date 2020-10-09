@@ -1,25 +1,23 @@
 {
 	"server": { 
 		"name": "$(LIBRARY)",
-		"port": 16788,
+		"port": 16789,
 		"userId": "QWSERVICE",
+		"noHttp": true,
 		"version": "*CURRENT",
 		"printErrorDetails":false 
 	},
 	"services": [
 		{
-			"name": "HELLOWORLDX",
+			"name": "HelloWorld",
 			"programObject": "/QSYS.LIB/$(LIBRARY).LIB/HELLOWORLD.SRVPGM",
 			"userId": "*SERVER",
 			"detectFieldLengths": true,
 			"serviceType": "*REST",
 			"host": "localhost",
-			"targetNamespace": null,
 			"propertiesFile": "/tmp/HELLOWORLD.propertiesFile",
-			"libraryList": "HELLOWRLD:QTEMP",
+			"libraryList": "$(LIBRARY)",
 			"libraryListPosition": "*FIRST",
-			"transportMetadata": null,
-			"transportHeaders": null,
 			"useParamNameAsElementName": false,
 			"properties": [
 				{
@@ -27,11 +25,15 @@
 					"sayHello.http.request.method": "GET",
 					"sayHello.wrap.input.parameters": false,
 					"sayHello.wrap.output.parameter": false,
-					"sayHello.consumes": "application/json",
+					"sayHello.consumes": "*/*",
 					"sayHello.produces": "application/json",
-					"sayHello.NAME.usage": "input",
-					"sayHello.NAME.queryparam": "name",
-					"sayHello.RESPONSE.usage": "output",
+					"sayHello.response.code.parameter": "ResponseCode",
+					"sayHello.http.headers.parameter": "ResponseHeaders",
+					"sayHello.Name.usage": "input",
+					"sayHello.Name.queryparam": "name",
+					"sayHello.Response.usage": "output",
+					"sayHello.ResponseCode.usage": "output",
+					"sayHello.ResponseHeaders.usage": "output",
 					"responses" : {
 						"200": {
            					"description": "Successful operation XXXXXX"
