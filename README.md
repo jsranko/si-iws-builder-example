@@ -24,7 +24,7 @@ A local copy of the project must be created:
 git clone https://github.com/jsranko/si-iws-builder-example.git
 ```
 
-### Install other dependencies
+### Install dependencies and build the project
 
 ```
 cd si-iws-builder-example
@@ -34,8 +34,3 @@ cd si-iws-builder-example
 bash setup.sh
 ```
 
-### Build project
-
-```
-gmake
-```
