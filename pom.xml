@@ -7,8 +7,8 @@
 
 	<groupId>de.sranko-informatik.ibmi</groupId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>si-iws-builder</name>
-	<url>https://github.com/jsranko/si-iws-builder/wiki</url>
+	<name>si-iws-builder-example</name>
+	<url>https://github.com/jsranko/si-iws-builder-example</url>
 
 	<developers>
 		<developer>
@@ -22,7 +22,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>de.sranko-informatik.ibmi</groupId>
-			<artifactId>si-iws-builder</artifactId>
+			<artifactId>si-iws-builder-example</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
