@@ -2,7 +2,7 @@
 	"server": { 
 		"name": "$(LIBRARY)",
 		"port": 16789,
-		"userId": "QWSERVICE",
+		"userId": "CECUSER",
 		"noHttp": true,
 		"version": "*CURRENT",
 		"printErrorDetails":false 

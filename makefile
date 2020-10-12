@@ -72,9 +72,9 @@ display-vars:
 	touch $@
 
 %.$(EXT_IWSSCONF): %.$(EXT_IWSS)
-	# @echo "$$@=$@ $$%=$% $$<=$< $$?=$? $$^=$^ $$+=$+ $$|=$| $$*=$*"
-	$(call substitute,$<,$@) && \
-	$(call copy_to_srcpf,$(ROOT_DIR)/$@,$(LIBRARY),$(DIR_IWSS),$(notdir $*))
+	# @echo "$$@=$@ $$%=$% $$<=$< $$?=$? $$^=$^ $$+=$+ $$|=$| $$*=$*"	
+	$(call substitute,$<,$@)
+	$(call copy_to_srcpf,$(ROOT_DIR)/$+,$(LIBRARY),$(DIR_IWSS),$(notdir $*))
 	java -cp ./si-iws-builder-latest.jar de.sranko_informatik.ibmi.iwsbuilder.App ./$@ 
 
 clean: clean-iwss \

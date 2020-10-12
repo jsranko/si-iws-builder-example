@@ -46,26 +46,7 @@ install_jar_dependencies()
 			echo "All Jar dependencies are present."  
 		else
     		echo "$1 does not exist. It will be downloaded ..."    		    		
-			curl -H "Authorization: bearer ee08d76790ed01459f29e8824ed37a4025f44e23" -X POST -d '{"query":"query { 
-    		  repository(owner:"jsranko", name:"si-iws-builder") {
-    		packages (last:1) {
-    		            nodes {
-    		                versions(last:1) {
-    		                    nodes {
-    		                        files(first:3, orderBy: {field: CREATED_AT, direction: DESC}){
-    		                            nodes {
-    		                                name 
-    		                                url
-    		                              }  
-    		                            }
-    		                     }    
-    		                }
-    		            }
-    		        }
-    		    }      
-}
-"}' https://api.github.com/graphql --insecure
-#			curl https://api.github.com/repos/jsranko/si-iws-builder/releases/latest --insecure | jq '.assets[].browser_download_url | select(contains("with-"))' | xargs -n1 curl --output $1 --insecure --location
+			curl http://files.sranko-informatik.de/getGithubPackage.php?package=si-iws-builder --output $1
 		fi
 
         
@@ -92,18 +73,6 @@ build_project()
 #
 ################################################################################
 
-data=$(curl -H "Authorization: token $GITHUB_TOKEN" -s -d @- https://api.github.com/graphql << GQL
-{ "query": "
-  query {
-    viewer {
-      login
-    }
-  }
-" }
-GQL
-)
-
-echo $data | jq -r .data.viewer.login
 
 
 
