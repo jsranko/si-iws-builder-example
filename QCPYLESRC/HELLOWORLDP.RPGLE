@@ -23,9 +23,7 @@ dcl-s tHttpHeaderEntry char(100) template;
 // Prototypes
 //==========================================================================================
 
-dcl-pr sayHello extproc(*dclcase);
+dcl-pr HelloWorld;
   Name like(tName) const;
   Response like(tJSON);
-  ResponseCode like(tHttpStatus);
-  ResponseHeaders like(tHttpHeaderEntry) dim(10);
 end-pr;

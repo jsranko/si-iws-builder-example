@@ -10,7 +10,7 @@
 	"services": [
 		{
 			"name": "HelloWorld",
-			"programObject": "/QSYS.LIB/$(LIBRARY).LIB/HELLOWORLD.SRVPGM",
+			"programObject": "/QSYS.LIB/$(LIBRARY).LIB/HELLOWORLD.PGM",
 			"userId": "*SERVER",
 			"detectFieldLengths": true,
 			"serviceType": "*REST",
@@ -21,19 +21,15 @@
 			"useParamNameAsElementName": false,
 			"properties": [
 				{
-					"sayHello.uri.path.template": "/sayHallo/"	,
-					"sayHello.http.request.method": "GET",
-					"sayHello.wrap.input.parameters": false,
-					"sayHello.wrap.output.parameter": false,
-					"sayHello.consumes": "*/*",
-					"sayHello.produces": "application/json",
-					"sayHello.response.code.parameter": "ResponseCode",
-					"sayHello.http.headers.parameter": "ResponseHeaders",
-					"sayHello.Name.usage": "input",
-					"sayHello.Name.queryparam": "name",
-					"sayHello.Response.usage": "output",
-					"sayHello.ResponseCode.usage": "output",
-					"sayHello.ResponseHeaders.usage": "output",
+					"HelloWorld.uri.path.template": "/sayHallo/"	,
+					"HelloWorld.http.request.method": "GET",
+					"HelloWorld.wrap.input.parameters": false,
+					"HelloWorld.wrap.output.parameter": false,
+					"HelloWorld.consumes": "*/*",
+					"HelloWorld.produces": "application/json",
+					"HelloWorld.Name.usage": "input",
+					"HelloWorld.Name.queryparam": "name",
+					"HelloWorld.Response.usage": "output",
 					"responses" : {
 						"200": {
            					"description": "Successful operation XXXXXX"
